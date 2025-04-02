@@ -1,0 +1,416 @@
+/* --- General Styles & Variables --- */
+:root {
+    --primary-color: #007bff; /* Modern Blue */
+    --secondary-color: #28a745; /* Success Green */
+    --light-bg: #f8f9fa;
+    --dark-text: #333;
+    --light-text: #fff;
+    --border-color: #dee2e6;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --hover-primary: #0056b3;
+    --hover-secondary: #1e7e34;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scrollbars from animations */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+ul li:last-child{
+    border-bottom: none;
+}
+
+ul li i { /* Style for potential Font Awesome icons */
+    margin-right: 10px;
+    color: var(--secondary-color);
+    width: 20px; /* Ensure alignment */
+    text-align: center;
+}
+
+
+/* --- Header --- */
+header {
+    background: var(--light-bg);
+    padding: 1.5rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header .tagline {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--light-text);
+    overflow: hidden; /* Contain pseudo-element */
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 50, 100, 0.7), rgba(0, 30, 60, 0.8)), url('https://via.placeholder.com/1500x800?text=Plumbing+Background') no-repeat center center/cover; /* Replace with actual image */
+    z-index: -1;
+    /* Optional: Ken Burns effect */
+    /* animation: zoomEffect 20s infinite alternate; */
+}
+/*
+@keyframes zoomEffect {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+*/
+
+.hero-section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--light-text);
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px; /* Rounded buttons */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+}
+
+.btn-secondary:hover {
+    background-color: var(--hover-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Content Sections --- */
+.content-section {
+    padding: 4rem 0;
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+/* --- Info Grid (About Section) --- */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.info-grid div {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+.info-grid div:hover {
+     transform: translateY(-5px);
+}
+
+
+.info-grid h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.info-grid h3 i {
+    color: var(--secondary-color);
+    margin-right: 8px;
+}
+
+/* --- Services Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.service-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-item h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+/* --- Form Styles --- */
+#quote-form form {
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px; /* Rounded input fields */
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resize */
+    min-height: 100px;
+     border-radius: 15px; /* Slightly less round for textarea */
+}
+
+#quote-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#form-status {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+#form-status.success { color: var(--secondary-color); }
+#form-status.error { color: #dc3545; }
+
+/* --- Contact Info --- */
+.contact-info {
+    text-align: center;
+}
+.contact-info p {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+.contact-info a {
+    font-weight: 600;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-text);
+    color: var(--light-text);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* --- Animations --- */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease-out forwards;
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeftAnimation 0.8s ease-out forwards;
+}
+
+.fade-in-up {
+     opacity: 0;
+     transform: translateY(30px);
+     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Class added by JS when element is in view */
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Animation Delays */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+@keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeftAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Make animations apply only once on load */
+.animate-on-load {
+    opacity: 0; /* Start hidden */
+    /* The specific animation is applied directly */
+}
+
+/* Apply animations defined above */
+header.fade-in { animation-name: fadeInAnimation; }
+.hero-section .slide-in-left { animation-name: slideInLeftAnimation; }
+.hero-section .fade-in { animation-name: fadeInAnimation; }
+
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .hero-section h2 { font-size: 2.5rem; }
+    .hero-section { min-height: 60vh; padding: 3rem 0;}
+
+    .info-grid, .services-grid {
+        grid-template-columns: 1fr; /* Stack columns */
+    }
+
+    #quote-form form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+     h1 { font-size: 2rem; }
+     .hero-section h2 { font-size: 2rem; }
+     .hero-section p { font-size: 1rem; }
+     .btn { padding: 10px 20px; font-size: 0.9rem; }
+}
